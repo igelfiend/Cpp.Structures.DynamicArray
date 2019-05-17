@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#include <iostream>
-
 class DynArray
 {
 private:
@@ -27,9 +25,6 @@ public:
 
     void make_array(int new_capacity)
     {
-//        std::cout << "make_array: started called with capacity " << new_capacity << std::endl;
-//        std::cout << "make_array: setting capacity " << new_capacity << std::endl;
-
         //! Check with lower bound
         if( new_capacity < _minCapacity )
         {
@@ -39,7 +34,6 @@ public:
         //! Check for reassign same capacity
         if( new_capacity == capacity )
         {
-//            std::cout << "make_array: Same capacity, return\n";
             return;
         }
 
@@ -56,7 +50,6 @@ public:
             newArray[ i ] = array[ i ];
         }
 
-//        std::cout << "make_array: deleting old array";
         //! Clear old memory
         delete[] array;
 
@@ -64,7 +57,6 @@ public:
         array = newArray;
 
         capacity = new_capacity;
-//        std::cout << "make_array: successfully finished\n";
     }
 
     int get_item(int index) const
@@ -95,14 +87,6 @@ public:
         {
             return;
         }
-
-//        //! Check if we trying to add element in the end of array
-//        if( index == count )
-//        {
-//            append( value );
-//            return;
-//        }
-
 
         increaseBuffer();
 
